@@ -1,0 +1,36 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>iNav</title>
+        <script>
+            function buscar(){
+                document.getElementById('img').src = "img/" + document.getElementById('text').value + ".jpg";
+            }
+        </script>
+    </head>
+    <body>
+        
+        <div align="center">
+            <img id="img" alt="iNav" src="img/iNavLogo.png" width="160"/>
+        </div>
+        
+        <div align="center" style="font-family:verdana; font-size:80%">
+                <table>
+                    <tr><td colspan="2" align="center">¿Donde quieres llegar?</td></tr>
+                    <tr>
+                        <td align="center"><input id="text" type="text" name="txtSala" /></td>
+                        <td align="center"><a href="#" onclick="buscar()">Ir</a></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr><td><img id="img" alt="Ups... Debería aparecer un mapa aquí... Supongo que no existe la sala que buscas... inténtalo denuevo!" src="img/base.jpg" width="480" /></td></tr>
+                </table>
+        </div>
+        
+        <div align="center" style="font-family:verdana; font-size:50%">
+            Desarrollado por Andres Robert - Idea Original Hector Casellas
+        </div>
+    </body>
+</html>

@@ -1,4 +1,3 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -6,31 +5,58 @@
         <title>iNav</title>
         <script>
             function buscar(){
-                document.getElementById('img').src = "img/" + document.getElementById('text').value + ".jpg";
+                var rooms = '101_102_103_104_105_106_107_108_109_110_111_112_113_115_203_204_205_206_207_208_209_210_211_212_213_214_215_216_217_218_219_220_221_300_301_302_303_304_305_306_307_308_309_310_311_401_402_403_404_405_406_407_408_409_410_411_412_413_414_415_416_417_505_506_509';
+                var services = 'baño administracion_baño administración_baño hombre_baño hombre 1_baño hombre 2_baño hombre 3_baño hombre 4_baño hombre 5_baño mujer_baño mujer 1_baño mujer 2_baño mujer 3_baño mujer 4_baño mujer 5_biblioteca_biblioteca 3_biblioteca 4_bip_caja_camarin hombre_camarin mujer_camarín hombre_camarín mujer_cancha_capilla_casino 1_casino 2_enfermeria_enfermería_fotocopia_fotocopia 1_fotocopia 2_fotocopia 3_fotocopias_imprimete bip_imprímete bip_imprimete bip 1_imprimete bip 2_imprimete bip 3_imprimete bip 3_imprímete bip 3_multicancha_primeros auxilios_punto estudiantil_sala de profesores_vestidor hombres_vestidor mujeres';
+                var labs = 'i13_i15_i23_i24_i25_i26_i27_i28_i29_i31_i32_l01_l11_l12_l13_l14_l15_l16_l17_l21_l22_l23_l24_l25_l31_l32_l33_l34_l50_l51_l52_l53_l54_l55_l56_l57_l58_l59_t22_t23_t24_t25_t26_t31_t32_t33_t34_t35';
+                var office = 'auditorio_aula magna_cetecom_ceten_cetet_cetir_citt_coordinacion docente_coordinación docente_difusion_difusión_direccion sede_dirección sede_formacion general_formación general_restaurant didactico_restaurant didáctico_n22_n23_r15_r31_s01_s02_sala multiuso_taller restaurant';
+                var search = document.getElementById('text').value.toLowerCase();
+                if(rooms.indexOf(search)!=-1)
+                	document.getElementById('img').src = "img/" + search + ".png";
+                else
+                	if(labs.indexOf(search)!=-1)
+                		document.getElementById('img').src = "img/" + search + ".png";
+                	else
+                		if(office.indexOf(search)!=-1)
+                			document.getElementById('img').src = "img/" + search + ".png";
+                		else
+                			if(services.indexOf(search)!=-1)
+                				document.getElementById('img').src = "img/" + search + ".png";
+                			else
+                				document.getElementById('img').src = "img/noe.png";                    
             }
         </script>
     </head>
     <body>
         
         <div align="center">
-            <img id="img" alt="iNav" src="img/iNavLogo.png" width="160"/>
+            <img id="logo" alt="iNav" src="img/iNavLogo.png" width="160"/>
         </div>
         
         <div align="center" style="font-family:verdana; font-size:80%">
                 <table>
-                    <tr><td colspan="2" align="center">¿Donde quieres llegar?</td></tr>
+                    <tr><td colspan="2" align="center">¿Dónde quieres llegar?</td></tr>
                     <tr>
                         <td align="center"><input id="text" type="text" name="txtSala" /></td>
-                        <td align="center"><a href="#" onclick="buscar()">Ir</a></td>
+                        <td align="center">
+                        	<a href="#" onclick="buscar()">
+                        		<img src="img/search.png" border="0" />
+                        	</a>
+                        </td>
                     </tr>
                 </table>
                 <table>
-                    <tr><td><img id="img" alt="Ups... Debería aparecer un mapa aquí... Supongo que no existe la sala que buscas... inténtalo denuevo!" src="img/base.jpg" width="480" /></td></tr>
+                    <tr><td><img id="img" alt="Ups..." src="img/base.png" width="480" /></td></tr>
                 </table>
         </div>
         
         <div align="center" style="font-family:verdana; font-size:50%">
             Desarrollado por Andres Robert - Idea Original Hector Casellas
+        </div>
+        <div align="center" style="font-family:verdana; font-size:50%">
+            Actualizado Marzo 2015
+        </div>
+        <div align="center" style="font-family:verdana; font-size:50%">
+        	<a href="https://github.com/AndresRobert/iNav/blob/master/home" target="_blank">GitHub</a>
         </div>
     </body>
 </html>

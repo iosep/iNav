@@ -1,6 +1,7 @@
 <!-- http://inav.comuv.com -->
 <!DOCTYPE html>
 <html lang="es">
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,54 +25,72 @@
 	        	img.src = s;}
 	        function lookup(){
 	        	var search = 'img/' + clean(document.getElementById('text').value) + '.png';
-	        	chkimg(search, function good(){document.getElementById('img').src = search;}, function bad(){document.getElementById('img').src = 'img/noe.png';});}</script>
+	        	if (search=='img/.png') document.getElementById('img').src = 'img/base.png';
+	        	else chkimg(search, 
+	        			function good(){document.getElementById('img').src = search;}, 
+	        			function bad(){document.getElementById('img').src = 'img/noe.png';});}
+	        function help(){document.getElementById('img').src = 'img/help.png';}
+	        function about(){document.getElementById('img').src = 'img/about.png';}</script>
 		<title>iNav - Indoors Navigation</title>
 	</head>
+
 	<body>
 		<div class="container" align="center">
-  			<img id="logo" alt="iNav" src="img/iNavLogo.png" width="160"/>
-		</div>
-		<div class="row" align="center">
-			<div class="col-sm-12"><p>¿Dónde quieres llegar?</p></div>
-		</div>
-		<div class="row" align="center">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
-				<input class="form-control input-sm" id="text" type="text" name="txtSala" placeholder="Sala, laboratorio, baño..." />
-			</div>
-			<div class="col-sm-4"></div>
-		</div>
-		<div class="row" align="center">
-			<div class="col-sm-4"></div>
-			<div class="col-sm-4">
-				<div class="btn-group">
-					<a href="#" onclick="lookup()" class="btn btn-default btn-sm">
-						<span class="glyphicon glyphicon-search"></span> Buscar
-					</a>
-					<a href="#" onclick="help()" class="btn btn-default btn-sm">
-						<span class="glyphicon glyphicon-exclamation-sign"></span> Ayuda
-					</a>
-					<a href="#" onclick="about()" class="btn btn-default btn-sm">
-						<span class="glyphicon glyphicon-plus"></span> Más...
-					</a>
+			<div class="row">
+				<div class="col-sm-12">
+					<img id="logo" alt="iNav" src="img/iNavLogo.png" width="160"/>
 				</div>
 			</div>
-			<div class="col-sm-4"></div>
-		</div>
-		<div class="row" align="center">
-			<div class="col-sm-12">
-				<h2><img id="img" alt="Ups..." src="img/base.png" class="img-responsive" /></h2>
+			<div class="row">
+				<div class="col-sm-12">
+					<p>
+						¿Dónde quieres llegar?
+					</p>
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<input class="form-control input-sm" id="text" type="text" name="txtSala" placeholder="Sala, laboratorio, baño..." />
+				</div>
+				<div class="col-sm-4"></div>
 			</div>
-		</div>
-		<div class="row" align="center">
-			<div class="col-sm-12">
-				<h6><small>Desarrollado por Andres Robert - Idea Original de Hector Casellas</small></h6>
+			<div class="row">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4">
+					<div class="btn-group">
+						<a href="#" onclick="lookup()" class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-search"></span> Buscar
+						</a>
+						<a href="#" onclick="help()" class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-exclamation-sign"></span> Ayuda
+						</a>
+						<a href="#" onclick="about()" class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-plus"></span> Más...
+						</a>
+					</div>
+				</div>
+				<div class="col-sm-4"></div>
 			</div>
-			<div class="col-sm-12">
-				<h6><small>Actualizado Marzo 2015</small></h6>
+			<div class="row">
+				<div class="col-sm-12">
+					<h2>
+						<img id="img" alt="Ups..." src="img/base.png" class="img-responsive" />
+					</h2>
+				</div>
 			</div>
-			<div class="col-sm-12">
-				<h6><small><a href="https://github.com/AndresRobert/iNav/blob/master/home" target="_blank">GitHub</a></small></h6>
+			<div class="row">
+				<div class="col-sm-12">
+					<h5>
+						<small>
+							Desarrollado por Andres Robert - Idea Original de Hector Casellas <br/>
+							Actualizado Marzo 2015 <br/>
+							<a href="https://github.com/AndresRobert/iNav/blob/master/home" target="_blank">
+								GitHub
+							</a>
+						</small>
+					</h5>
+				</div>
 			</div>
 		</div>
 	</body>

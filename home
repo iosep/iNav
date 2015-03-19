@@ -1,7 +1,6 @@
 <!-- http://inav.comuv.com -->
 <!DOCTYPE html>
 <html lang="es">
-
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,16 +23,19 @@
 	        	img.onload = g;
 	        	img.src = s;}
 	        function lookup(){
-	        	var search = 'img/' + clean(document.getElementById('text').value) + '.png';
+	        	var search = 'img/' + clean(document.getElementById('text').value).trim() + '.png';
 	        	if (search=='img/.png') document.getElementById('img').src = 'img/base.png';
 	        	else chkimg(search, 
 	        			function good(){document.getElementById('img').src = search;}, 
 	        			function bad(){document.getElementById('img').src = 'img/noe.png';});}
+	        function lookup2(e){
+	        	k = (document.all) ? e.keyCode : e.which;
+	        	if(k == 13) lookup();
+	        }
 	        function help(){document.getElementById('img').src = 'img/help.png';}
 	        function about(){document.getElementById('img').src = 'img/about.png';}</script>
 		<title>iNav - Indoors Navigation</title>
 	</head>
-
 	<body>
 		<div class="container" align="center">
 			<div class="row">
@@ -51,7 +53,7 @@
 			<div class="row">
 				<div class="col-sm-4"></div>
 				<div class="col-sm-4">
-					<input class="form-control input-sm" id="text" type="text" name="txtSala" placeholder="Sala, laboratorio, baño..." />
+					<input class="form-control input-sm" id="text" type="text" name="txtSala" placeholder="Sala, laboratorio, baño..." onkeypress="lookup2(event)" />
 				</div>
 				<div class="col-sm-4"></div>
 			</div>

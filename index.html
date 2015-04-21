@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">	
+		<link rel="stylesheet" href="img/iNavStyle.css">	
+		<link rel="icon" type="image/png" href="img/favicon.png" />
+		<script src="img/inav.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<title>iNav - Indoors Navigation</title>
+	</head>
+
+	<body>
+
+		<div class="container" align="center">
+
+			<div class="row">
+  				<div class="col-lg-12">
+    				<div class="input-group">
+    					<span class="input-group-btn">
+        					<a href="#" class="btn btn-default btn-sm">
+								<img id="logo" alt="iNav" src="img/iNavLogo.png" width="20"/>
+							</a>
+      					</span>
+      					<input class="form-control input-sm" id="text" type="text" name="txtSala" placeholder="Sala, laboratorio..." onkeypress="lookup2(event)" />
+      					<span class="input-group-btn">
+        					<a href="#" onclick="lookup()" class="btn btn-primary btn-sm">
+								<span class="glyphicon glyphicon-search"></span>
+							</a>
+							<a href="#" onclick="help()" class="btn btn-primary btn-sm">
+								<span class="glyphicon glyphicon-exclamation-sign"></span>
+							</a>
+      					</span>
+    				</div>
+  				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<h2>
+						<img id="img" alt="Ups..." src="img/base.png" class="img-responsive" />
+					</h2>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12">
+					<h5>
+						<small>
+							Desarrollado por Andres Robert - Idea Original de Hector Casellas <br/>
+							Actualizado Marzo 2015 <br/>
+							<a href="https://github.com/AndresRobert/iNav/blob/master/home" target="_blank">
+								GitHub
+							</a>
+						</small>
+					</h5>
+				</div>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>	
